@@ -1,7 +1,8 @@
 package _01_Custom_ArrayList;
 
-import static org.junit.Assert.*;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.*;
 
 //Complete the ArrayList class using the generic to make the tests pass.
 

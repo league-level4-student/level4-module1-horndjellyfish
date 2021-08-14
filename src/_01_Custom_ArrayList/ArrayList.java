@@ -8,7 +8,7 @@ public class ArrayList <T>{
 	}
 	
 	public T get(int loc) throws IndexOutOfBoundsException {
-		
+
 		return null;
 	}
 	
@@ -29,7 +29,12 @@ public class ArrayList <T>{
 	}
 	
 	public boolean contains(T val) {
-		
+
 		return false;
+	}
+
+	public int size(T val) {
+
+		return 0;
 	}
 }
