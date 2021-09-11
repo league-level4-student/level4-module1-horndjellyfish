@@ -23,7 +23,7 @@ public class IntroToEnums {
 		
 		//They can also be used in a switch statement
 		switch(data) {
-		// Notice that 'DataTypes.' is not requires when accessing categories
+		// Notice that 'DataTypes.' is not required when accessing categories
 		case INTEGER:{
 			System.out.println("INT");
 			break;

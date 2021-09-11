@@ -122,6 +122,13 @@ public class CustomArrayListTest {
 		
 		assertTrue(list2.size() == 3);
 	}
+
+	@Test
+	public void testSize0() {
+		ArrayList<String> list = new ArrayList<>(6);
+		System.out.println(list.size());
+		assertTrue(list.size() == 0);
+	}
 	
 	@Test
 	public void testSizeOnRemove() {
