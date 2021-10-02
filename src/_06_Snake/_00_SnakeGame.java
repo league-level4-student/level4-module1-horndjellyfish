@@ -86,13 +86,13 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
         //   of the game. The smaller the number, the faster it goes.
         switch (choice) {
             case "Expert":
-                timer.setDelay(50);
+                timer.setDelay(75);
                 break;
             case "Moderate":
-                timer.setDelay(100);
+                timer.setDelay(150);
                 break;
             case "Beginner":
-                timer.setDelay(150);
+                timer.setDelay(200);
                 break;
         }
         //3. start the timer
@@ -105,7 +105,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        // TODO Auto-generated method stub
+
 
     }
 
@@ -127,6 +127,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
                 snake.setDirection(Direction.LEFT);
                 break;
             case KeyEvent.VK_SPACE:
+                System.out.println("Space is pressed");
                 snake.feed();
                 break;
         }
@@ -141,8 +142,8 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
     private void setFoodLocation() {
         //1. Create a new Location object that is set to a random location
         Random r = new Random();
-        int x = r.nextInt(WINDOW_WIDTH);
-        int y = r.nextInt(WINDOW_HEIGHT);
+        int x = r.nextInt(WINDOW_WIDTH - 10);
+        int y = r.nextInt(WINDOW_HEIGHT - 10);
         Location loc = new Location(x, y);
         //2. set the foodLocation variable equal to the Location object you just created.
         //   use the snake's isLocationOnSnake method to make sure you don't put the food on the snake
@@ -177,7 +178,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
+
     }
 
     @Override
@@ -186,12 +187,13 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
         snake.update();
         //2. if the snake is colliding with its own body
         //   or if the snake is out of bounds, call gameOver
-        if (snake.isOutOfBounds() || snake.isHeadCollidingWithBody()) {
+        if (snake.isHeadCollidingWithBody() || snake.isOutOfBounds()) {
             gameOver();
         }
         //3. if the location of the head is equal to the location of the food,
         // 	 feed the snake and set the food location
-        if (snake.getHeadLocation() == foodLocation) {
+        if (snake.getHeadLocation().equals(foodLocation)) {
+            System.out.println("snake ate the food");
             snake.feed();
             setFoodLocation();
         }
