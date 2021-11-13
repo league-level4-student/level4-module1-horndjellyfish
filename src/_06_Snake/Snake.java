@@ -26,22 +26,24 @@ public class Snake {
 
     public void feed() {
         //1. add a new SnakeSegment object to the snake
-//        int newXPos = snakeBody.get(snakeBody.size() - 1).getLocation().x;
-//        int newYPos = snakeBody.get(snakeBody.size() - 1).getLocation().y;
+        int newXPos = snakeBody.get(snakeBody.size() - 1).getLocation().x;
+        int newYPos = snakeBody.get(snakeBody.size() - 1).getLocation().y;
 //        //TODO: -1 might not be the right value, could be body size. need to verify
-//        Location newBodyLoc = new Location(newXPos - 1, newYPos);
-//        System.out.println("Position x of the new body location: " + (newXPos - 1));
-//        System.out.println("Position y o the new body location: " + newYPos);
+        Location newBodyLoc = new Location(newXPos - 1, newYPos);
+        System.out.println("Position x of the new body location: " + (newXPos - 1));
+        System.out.println("Position y o the new body location: " + newYPos);
 //        SnakeSegment newSegment = new SnakeSegment(newBodyLoc, BODY_SIZE);
 //        snakeBody.add(newSegment);
 //        System.out.println("Size of snake body array: " + snakeBody.size());
 //        update();
-        snakeBody.add(new SnakeSegment(snakeBody.get(0).getLocation(), BODY_SIZE));
+        snakeBody.add(new SnakeSegment(newBodyLoc, BODY_SIZE));
     }
 
     public Location getHeadLocation() {
         //2. return the location of the snake's head
+    	System.out.println(head.getLocation());
         return head.getLocation();
+        
     }
 
     public void update() {

@@ -52,7 +52,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
                 g2.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
                 g2.setColor(FOOD_COLOR);
-                g2.drawOval(foodLocation.x, foodLocation.y, Snake.BODY_SIZE, Snake.BODY_SIZE);
+                g2.fillOval(foodLocation.x, foodLocation.y, Snake.BODY_SIZE, Snake.BODY_SIZE);
                 snake.draw(g);
             }
         };
@@ -105,7 +105,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+    	
 
     }
 
